@@ -101,11 +101,11 @@ $ git clone https://github.com/im-happy-coder/docker-devland-application.git
 
 $ ./compose.sh up
 
-![composeUp](./img/composeUp.png)
+![composeUp](./img/composeUp.PNG)
 
 $ ./compose.sh down
 
-![composeDown](./img/composeDown.png)
+![composeDown](./img/composeDown.PNG)
 
 ### If you have docker and docker-compose Now use it freely
 
