@@ -143,6 +143,8 @@ content VARCHAR(1000),
 passwd VARCHAR(50) NOT NULL,
 writeDate VARCHAR(50) NOT NULL);
 
+Chainedtansaction 테스트하기 위해 잃부러 DB 데이터의 null 데이터를 삽입한다.
+
 insert into board(title, content, writer, passwd, writeDate) values('test1', '', 'kim', '1234', NOW());
 ```
 
@@ -162,6 +164,9 @@ CREATE TABLE board_tb(
  country VARCHAR(50) NOT NULL,
  writeDate VARCHAR(50),
  PRIMARY KEY(useid));
+
+
+Chainedtansaction 테스트하기 위해 잃부러 DB 데이터의 null 데이터를 삽입한다.
 
 insert into board_tb values(seq_board.nextval,'','oraclecontent1','asung','oracle1',sysdate);
 ```
