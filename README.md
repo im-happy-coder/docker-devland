@@ -107,6 +107,65 @@ $ ./compose.sh down
 
 ![composeDown](./img/composeDown.PNG)
 
+## MYSQL DB Settings
+
+$ docker container exec -it mysql8.0.23 /bin/bash
+
+$ mysql -u root -p
+
+- 패스워드 : 없음(엔터키)
+
+$ use mysql
+
+- 계정 확인
+    - $ select host, user, authentication_string from user;
+- 외부 접속 계정 만들기 # mysql8버전부터는 grant user 불가능
+    - $ CREATE USER 'wasdb'@'%' IDENTIFIED BY 'root';
+    - $ GRANT ALL PRIVILEGES ON  *.* TO 'wasdb'@'%' WITH GRANT OPTION;
+    - $ FLUSH PRIVILEGES;
+- 다시 확인
+    - $ select host, user from mysql.user;
+- 생성한 계정으로 로그인
+    - mysql - wasdb - root
+- DB 생성
+    - create database javatest
+- DB 접속
+    - use javatest
+    
+- 아래 Query 수행
+
+```
+create table board(
+bid INT PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(100),
+content VARCHAR(1000),
+ writer VARCHAR(50) NOT NULL,
+passwd VARCHAR(50) NOT NULL,
+writeDate VARCHAR(50) NOT NULL);
+
+insert into board(title, content, writer, passwd, writeDate) values('test1', '', 'kim', '1234', NOW());
+```
+
+## ORACLE DB Settings
+
+- 계정 생성 필요없이 기본 계정 사용
+    - ID: system
+    - PASSWD : oracle
+
+- 아래 Query 수행
+```
+CREATE TABLE board_tb(
+ useid NUMBER(10),
+ uname VARCHAR(100),
+ age VARCHAR(1000),
+ address VARCHAR(50) NOT NULL,
+ country VARCHAR(50) NOT NULL,
+ writeDate VARCHAR(50),
+ PRIMARY KEY(useid));
+
+insert into board_tb values(seq_board.nextval,'','oraclecontent1','asung','oracle1',sysdate);
+```
+
 ### If you have docker and docker-compose Now use it freely
 
 ---
