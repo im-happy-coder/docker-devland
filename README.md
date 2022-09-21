@@ -179,3 +179,4 @@ insert into board_tb values(seq_board.nextval,'','oraclecontent1','asung','oracl
 
 ---
 
+아래 예제 
