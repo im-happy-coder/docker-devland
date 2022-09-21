@@ -3,7 +3,7 @@ services:
   httpd:
     container_name: httpd
     restart: always
-    image: httpd_1.2.48:1.0
+    image: jane97/httpd_1.2.48:1.0
     volumes:
       - ../httpd/conf/:/etc/httpd/conf/
       - ../httpd/conf.d/:/etc/httpd/conf.d/

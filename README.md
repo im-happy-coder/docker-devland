@@ -1,4 +1,4 @@
-# Docker 개발 환경 구성
+# Overview
 
 개발에 필요한 시스템을 컨테이너화하여 쉽게 개발환경을 공유할 수 있고 동일한 환경에서 사용할 수 있다.
 
@@ -10,13 +10,20 @@
 
 Redis를 이용한 Object Cache, chainedtransaction를 이용하여 Mysql, Oracle의 트랜잭션을 구현하였다.
 
-Docker 환경에서 사용될 소스 코드는 아래 링크에서 받으면 된다.
+Docker 환경에서 사용될 샘플 소스 코드는 아래 링크에서 받으면 된다.
+
 [https://github.com/im-happy-coder/docker-devland-application](https://github.com/im-happy-coder/docker-devland-application)
 
----
+## Service list
 
+- apache + tomcat modJK Connector
+- JNDI(Java Naming Directory Interface)
+- JMX(Java Management Extensions)
+- Session Clustering
+- Object Cache
+- Chanedtransaction Manager
 
-## Enviroment
+## Specification
 
 > CentOS 7
 >
@@ -82,12 +89,28 @@ export JAVA_HOME M2_HOME PATH
 
 ---
 
-## Install Docker Project
+## Start Docker Project
 
 $ git clone https://github.com/im-happy-coder/docker-devland.git
 
-$ cd docker-devland/docker
+## Sample Source code
 
-$ docker-compose
+$ git clone https://github.com/im-happy-coder/docker-devland-application.git
 
-Detailed setting possible
+### docker-compose all up and all down
+
+$ ./compose.sh up
+
+![composeUp](./img/composeUp.png)
+
+$ ./compose.sh down
+
+![composeDown](./img/composeDown.png)
+
+# If you have docker and docker-compose Now use it freely
+
+---
+
+상세 내용은 블로그에 포스팅하였습니다.
+
+[https://www.imhappycoder.com/blog/docker-devland](https://www.imhappycoder.com/blog/docker-devland)

@@ -6,10 +6,10 @@ COMPOSE_FILE_ORACLE=docker/docker-compose-oracle11g.yml
 COMPOSE_FILE_TOMCAT=docker/docker-compose-tomcat.yml
 COMPOSE_FILE_HTTPD=docker/docker-compose-httpd.yml
 
-# . scripts/utils.sh
+. scripts/mode.sh
 
 function composeUp() {
-  COMPOSE_FILES="-f ${COMPOSE_FILE_GITLAB} ${COMPOSE_FILE_JENKINS} ${COMPOSE_FILE_REDIS} ${COMPOSE_FILE_MYSQL} ${COMPOSE_FILE_ORACLE} ${COMPOSE_FILE_TOMCAT} -f ${COMPOSE_FILE_HTTPD}"
+  COMPOSE_FILES="-f ${COMPOSE_FILE_GITLAB} -f ${COMPOSE_FILE_JENKINS} -f ${COMPOSE_FILE_REDIS} -f ${COMPOSE_FILE_MYSQL} -f ${COMPOSE_FILE_ORACLE} -f ${COMPOSE_FILE_TOMCAT} -f ${COMPOSE_FILE_HTTPD}"
   docker-compose ${COMPOSE_FILES} up -d 2>&1
   docker ps -a
   if [ $? -ne 0  ]; then
@@ -19,7 +19,14 @@ function composeUp() {
 
 function composeDown() {
   # docker-compose -f $COMPOSE_FILE_TOMCAT $COMPOST_FILE_HTTPD down --volumes --remove-orphans
-  docker-compose -f $COMPOSE_FILE_TOMCAT $COMPOST_FILE_HTTPD down
+  # docker-compose -f $COMPOSE_FILE_TOMCAT $COMPOST_FILE_HTTPD down
+  COMPOSE_FILES="-f ${COMPOSE_FILE_GITLAB} -f ${COMPOSE_FILE_JENKINS} -f ${COMPOSE_FILE_REDIS} -f ${COMPOSE_FILE_MYSQL} -f ${COMPOSE_FILE_ORACLE} -f ${COMPOSE_FILE_TOMCAT} -f ${COMPOSE_FILE_HTTPD}"
+  docker-compose ${COMPOSE_FILES} down
+  docker ps -a
+  if [ $? -ne 0  ]; then
+    fatalln "Unable to start compose"
+  fi
+
 }
 
 # Parse Mode
