@@ -107,7 +107,7 @@ $ ./compose.sh down
 
 ![composeDown](./img/composeDown.png)
 
-# If you have docker and docker-compose Now use it freely
+### If you have docker and docker-compose Now use it freely
 
 ---
 
