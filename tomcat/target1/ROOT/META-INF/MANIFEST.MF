@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Implementation-Title: docker-on-project
+Implementation-Version: 0.0.1-SNAPSHOT
+Archiver-Version: Plexus Archiver
+Built-By: root
+Implementation-Vendor-Id: com.jndi.jti
+Spring-Boot-Version: 1.4.5.RELEASE
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: org.springframework.boot.loader.WarLauncher
+Start-Class: com.jndi.jti.JtiApplication
+Spring-Boot-Classes: WEB-INF/classes/
+Spring-Boot-Lib: WEB-INF/lib/
+Created-By: Apache Maven 3.6.1
+Build-Jdk: 1.8.0_201
+Implementation-URL: http://projects.spring.io/spring-boot/docker-on-pr
+ oject/
+

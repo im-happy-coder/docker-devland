@@ -1,0 +1,124 @@
+{
+  "groups": [
+    {
+      "name": "db.cache",
+      "type": "com.jndi.jti.config.redis.properties.RedisObjectCacheProperties",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.object",
+      "type": "com.jndi.jti.config.redis.properties.RedisConnectionObjectCacheProperties",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.session",
+      "type": "com.jndi.jti.config.redis.properties.RedisConnectionHttpSessionCacheProperties",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionHttpSessionCacheProperties"
+    },
+    {
+      "name": "ttaeinee.datasource.mysql",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.jndi.jti.config.datasource.MySQLDataSourceConfiguration",
+      "sourceMethod": "dataSource4BaseJndiMysql()"
+    },
+    {
+      "name": "ttaeinee.datasource.oracle",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.jndi.jti.config.datasource.OracleDataSourceConfiguration",
+      "sourceMethod": "dataSource4BaseJndiOracle()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "db.cache.default-expire-time",
+      "type": "java.lang.Long",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisObjectCacheProperties"
+    },
+    {
+      "name": "db.cache.expires",
+      "type": "java.util.Map<java.lang.String,java.lang.Long>",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.object.cluster",
+      "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$Cluster",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.object.database",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.object.host",
+      "type": "java.lang.String",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.object.password",
+      "type": "java.lang.String",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.object.pool",
+      "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$Pool",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.object.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.object.sentinel",
+      "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$Sentinel",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.object.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionObjectCacheProperties"
+    },
+    {
+      "name": "spring.redis.session.cluster",
+      "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$Cluster",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionHttpSessionCacheProperties"
+    },
+    {
+      "name": "spring.redis.session.database",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionHttpSessionCacheProperties"
+    },
+    {
+      "name": "spring.redis.session.host",
+      "type": "java.lang.String",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionHttpSessionCacheProperties"
+    },
+    {
+      "name": "spring.redis.session.password",
+      "type": "java.lang.String",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionHttpSessionCacheProperties"
+    },
+    {
+      "name": "spring.redis.session.pool",
+      "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$Pool",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionHttpSessionCacheProperties"
+    },
+    {
+      "name": "spring.redis.session.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionHttpSessionCacheProperties"
+    },
+    {
+      "name": "spring.redis.session.sentinel",
+      "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$Sentinel",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionHttpSessionCacheProperties"
+    },
+    {
+      "name": "spring.redis.session.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jndi.jti.config.redis.properties.RedisConnectionHttpSessionCacheProperties"
+    }
+  ],
+  "hints": []
+}

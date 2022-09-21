@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  redis:
+    container_name: docker_redis6
+    image: jane97/redis_6.0:1.0
+    ports:
+      - "6379:6379"
+    restart: always
+    volumes:
+      - redis-data:/data
+      - redis-conf:/usr/local/conf/redis.conf
+volumes:
+    redis-data:
+    redis-conf:

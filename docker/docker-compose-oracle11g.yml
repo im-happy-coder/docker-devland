@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  oracle11g:
+    image: jane97/oracle_11g:1.0  
+    restart: always
+    container_name: oracle11g
+    volumes:
+      - oracle11g-data:/var/lib/oracle11g
+    ports:
+      - 1521:1521
+volumes:
+    oracle11g-data:
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <meta charset="UTF-8" />
+    <title>jndi</title>
+</head>
+<body>
+<div class="container">
+    <h2 style="color: chartreuse">MYSQL DB</h2>
+        <table class="table table-hover">
+            <tr>
+                <th>bid</th>
+                <th>title</th>
+<!--                <th>content</th>-->
+<!--                <th>writer</th>-->
+<!--                <th>passwd</th>-->
+                <th>writeDate</th>
+            </tr>
+            <th:block th:each="ml : ${txMysql}">
+                <tr>
+                    <td><a th:href="@{txRead(bid=${ml.bid})}"><span th:text="${ml.bid}"></span></a></td>
+                    <td th:text="${ml.title}"></td>
+<!--                    <td th:text="${ml.content}"></td>-->
+<!--                    <td th:text="${ml.writer}"></td>-->
+<!--                    <td th:text="${ml.passwd}"></td>-->
+                    <td th:text="${ml.writeDate}"></td>
+                </tr>
+            </th:block>
+        </table>
+<hr/>
+    <h2 style="color: blue">ORACLE DB</h2>
+    <table class="table table-hover">
+        <tr>
+            <th>bid</th>
+            <th>title</th>
+<!--            <th>content</th>-->
+<!--            <th>writer</th>-->
+<!--            <th>passwd</th>-->
+            <th>writeDate</th>
+        </tr>
+        <th:block th:each="ol : ${txOracle}">
+            <tr>
+                <td><a th:href="@{txRead(bid=${ol.useid})}"><span th:text="${ol.useid}"></span></a></td>
+                <td th:text="${ol.uname}"></td>
+<!--                <td th:text="${ol.content}"></td>-->
+<!--                <td th:text="${ol.writer}"></td>-->
+<!--                <td th:text="${ol.passwd}"></td>-->
+                <td th:text="${ol.writeDate}"></td>
+            </tr>
+        </th:block>
+    </table>
+</div>
+<hr/>
+<br/>
+<span style="font-size: 30px">Instance :</span><span style="color: blue; font-size: 25px" th:text="${inetAddress}"></span>
+<hr/>
+<br/>
+Session ID : <span th:text="${sessionId}"></span><br/>
+It is New Session? : <span th:text="${sessionisNew}"></span><br/>
+Session Create Date : <span th:text="${sessionCreateTime}"></span><br/>
+Session Last Date : <span th:text="${sessionLastTime}"></span><br/>
+
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/css/bootstarp.min.css}"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  tomcat1:
+    container_name: tomcat1
+    restart: always
+    image: jane97/tomcat1_9.0:1.0    
+    volumes:
+      - ../tomcat/target1/:/usr/local/tomcat/webapps/
+      - ../tomcat/conf1/:/usr/local/tomcat/conf/
+    expose:
+      - "8009"
+    ports:
+      - "8888:8080"
+  tomcat2:
+    container_name: tomcat2
+    restart: always
+    image: jane97/tomcat2_9.0:1.0
+    volumes:
+      - ../tomcat/target2/:/usr/local/tomcat/webapps/
+      - ../tomcat/conf2/:/usr/local/tomcat/conf/
+    expose:
+      - "8019"
+    ports:
+      - "9999:8080"

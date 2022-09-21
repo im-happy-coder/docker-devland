@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+	<meta charset="UTF-8" />
+	<title>jndi</title>
+</head>
+<body>
+	<div>
+		<h2 style="color: blue">ORACLE DB</h2>
+		<table class="table table-hover">
+			<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>address</th>
+			</tr>
+			<th:block th:each="ol : ${oracleList}">
+				<tr>
+					<td th:text="${ol.id}"></td>
+					<td th:text="${ol.name}"></td>
+					<td th:text="${ol.address}"></td>
+				</tr>
+			</th:block>
+		</table>
+	</div>
+	<hr/>
+	<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/4.0.0-2/css/bootstarp.min.css}"></script>
+</body>
+</html>

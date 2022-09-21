@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  web:
+    image: jane97/gitlab_11.10.3-ce:1.0
+    restart: always
+    container_name: 'gitlab11.10.3-ce.0'
+    hostname: 'gitlab'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost:8000'
+    ports:
+      - '8000:8000'
+      - '8443:8443'
+      - '23:22'
+    volumes:
+      - 'gitlab-config:/etc/gitlab'
+      - 'gitlab-logs:/var/log/gitlab'
+      - 'gitlab-data:/var/opt/gitlab'
+volumes:
+  gitlab-data:
+  gitlab-logs:
+  gitlab-config:

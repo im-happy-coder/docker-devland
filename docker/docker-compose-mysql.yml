@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  db:
+    container_name: mysql8.0.23
+    image: jane97/mysql_8.0.23:1.0
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootroot
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - /etc/my.cnf:/etc/my.cnf
+    ports:
+      - "3306:3306"
+volumes:
+ mysql-data:
