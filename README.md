@@ -150,6 +150,10 @@ insert into board(title, content, writer, passwd, writeDate) values('test1', '',
 
 ## ORACLE DB Settings
 
+$ docker container exec -it oracle11g /bin/bash
+
+$ sqlplus
+
 - 계정 생성 필요없이 기본 계정 사용
     - ID: system
     - PASSWD : oracle
