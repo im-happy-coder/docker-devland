@@ -165,7 +165,8 @@ writeDate VARCHAR(50) NOT NULL);
 
 Chainedtansaction 테스트하기 위해 잃부러 DB 데이터의 null 데이터를 삽입한다.
 
-insert into board(title, content, writer, passwd, writeDate) values('test1', '', 'kim', '1234', NOW());
+insert into board(title, content, writer, passwd, writeDate) values('test1', 'asd', 'kim', '1234', NOW());
+
 ```
 
 ## ORACLE DB Settings
@@ -190,9 +191,10 @@ CREATE TABLE board_tb(
  PRIMARY KEY(useid));
 
 
-Chainedtansaction 테스트하기 위해 잃부러 DB 데이터의 null 데이터를 삽입한다.
+CREATE SEQUENCE seq_board START WITH 1 INCREMENT BY 1;
 
-insert into board_tb values(seq_board.nextval,'','oraclecontent1','asung','oracle1',sysdate);
+insert into board_tb values(seq_board.nextval,'oracle1','oraclecontent1','asung','oracle1',sysdate);
+
 ```
 
 ### If you have docker and docker-compose Now use it freely
