@@ -97,6 +97,26 @@ $ git clone https://github.com/im-happy-coder/docker-devland.git
 
 $ git clone https://github.com/im-happy-coder/docker-devland-application.git
 
+
+## Server setting
+
+$ vi /etc/my.cnf
+
+my.cnf 파일 내용 수정 
+
+```
+[mysqld]
+skip-host-cache
+skip-name-resolve
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+secure-file-priv=/var/lib/mysql-files
+user=mysql
+
+pid-file=/var/run/mysqld/mysqld.pid
+
+```
+
 ### docker-compose all up and all down
 
 $ ./compose.sh up
