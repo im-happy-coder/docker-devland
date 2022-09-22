@@ -6,7 +6,7 @@ COMPOSE_FILE_ORACLE=docker/docker-compose-oracle11g.yml
 COMPOSE_FILE_TOMCAT=docker/docker-compose-tomcat.yml
 COMPOSE_FILE_HTTPD=docker/docker-compose-httpd.yml
 
-. scripts/mode.sh
+. mode.sh
 
 function composeUp() {
   COMPOSE_FILES="-f ${COMPOSE_FILE_GITLAB} -f ${COMPOSE_FILE_JENKINS} -f ${COMPOSE_FILE_REDIS} -f ${COMPOSE_FILE_MYSQL} -f ${COMPOSE_FILE_ORACLE} -f ${COMPOSE_FILE_TOMCAT} -f ${COMPOSE_FILE_HTTPD}"

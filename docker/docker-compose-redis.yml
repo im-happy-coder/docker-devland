@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   redis:
-    container_name: docker_redis6
+    container_name: redis6
     image: jane97/redis_6.0:1.0
     ports:
       - "6379:6379"
