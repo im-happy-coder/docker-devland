@@ -40,6 +40,7 @@ Docker 환경에서 사용될 샘플 소스 코드는 아래 링크에서 받으
 
 ```shell
 .
+├── compose.sh
 ├── docker
 │   ├── docker-compose-gitlab.yml
 │   ├── docker-compose-httpd.yml
@@ -53,8 +54,11 @@ Docker 환경에서 사용될 샘플 소스 코드는 아래 링크에서 받으
 │   ├── conf
 │   └── conf.d
 ├── img
+│   ├── composeDown.PNG
+│   └── composeUp.PNG
 ├── jenkins
 │   └── build
+├── mode.sh
 ├── README.md
 └── tomcat
     ├── build1
