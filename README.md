@@ -25,7 +25,7 @@ Docker 환경에서 사용될 샘플 소스 코드는 아래 링크에서 받으
 - Object Cache
 - Chanedtransaction Manager
 
-## Specification
+## Enviroment
 
 > CentOS 7
 >
