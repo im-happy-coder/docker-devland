@@ -1,4 +1,4 @@
-![docker-devland](./img/docker-dev-land.jpg)
+![docker-devland](https://github.com/im-happy-coder/docker-devland/blob/main/img/docker-dev-land.jpg?raw=true)
 
 # Overview
 
