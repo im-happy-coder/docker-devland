@@ -2,28 +2,28 @@
 
 # Overview
 
-Docker를 활용하여 개발에 필요한 시스템을 컨테이너화하고 쉽게 개발환경을 공유할 수 있고 동일한 환경에서 사용할 수 있다.
+Docker를 활용하여 개발에 환경 구축에 필요한 시스템을 컨테이너화하고
 
-해당 Docker-devland 프로젝트는 단순하게 웹서버, WAS, CI, CD 하는 것이 아닌
+docker-compose를 이용하여 각 컨테이너들을 관리하여
 
-웹서버와 WAS 연동 및 세션 클러스터링 환경과 JNDI 이용하여 서버에 있는 DB정보를 읽어서 어플리케이션과 Connection하는 기능을 추가하였다.
+쉽고 빠르게 개발환경을 구성할 수 있고
 
-모니터링 시스템은 JMX 모니터링을 이용하여 WAS의 상세 모니터링이 가능하다.
-
-Redis를 이용한 Object Cache, chainedtransaction를 이용하여 Mysql, Oracle의 트랜잭션을 구현하였다.
-
-Docker 환경에서 사용될 샘플 소스 코드는 아래 링크에서 받으면 된다.
+동일한 개발환경을 똑같이 구성할 수 있다.
 
 [https://github.com/im-happy-coder/docker-devland-application](https://github.com/im-happy-coder/docker-devland-application)
 
-## Service list
+## Technologies used
 
-- apache + tomcat modJK Connector
-- JNDI(Java Naming Directory Interface)
-- JMX(Java Management Extensions)
-- Session Clustering
-- Object Cache
-- Chanedtransaction Manager
+- 웹서버와 WAS 연결
+  - httpd(apache) + tomcat(was) modJK Connector
+- WAS와 DB 연결
+  - Tomcat GlobalNamingResources 기능을 사용하여 <br/>
+  JNDI(Java Naming Directory Interface) Mysql Oracle 연결
+- SpringBoot
+  - Chanedtransaction 이용하여 서로 다른 DB통신
+  - SpringBoot Redis 이용한 DB의 Object Cache 저장
+- JMX(Java Management Extensions) 이용하여 WAS 모니터링
+- WAS1, WAS2 Session Clustering
 
 ## Enviroment
 
@@ -32,11 +32,12 @@ Docker 환경에서 사용될 샘플 소스 코드는 아래 링크에서 받으
 > Docker version 20.10.16
 > 
 > docker-compose version 1.24.0
+>
+> Spring Boot 1.4.5
 > 
 > JDK 1.8.0_201
 >
 > MAVEN 3.6.1
->
 
 ## Directory Structure
 
@@ -74,5 +75,6 @@ Docker 환경에서 사용될 샘플 소스 코드는 아래 링크에서 받으
 
 ---
 
-- Notion Link: 
--- https://grateful-eye-0c3.notion.site/index-d66caf20989f4336a8e430f4b380101f?pvs=4
+### Description below
+
+- https://grateful-eye-0c3.notion.site/index-d66caf20989f4336a8e430f4b380101f?pvs=4
